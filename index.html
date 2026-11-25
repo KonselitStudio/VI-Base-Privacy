@@ -15,7 +15,7 @@
       <header class="header">
         <p class="brand">Konselit</p>
         <h1>VI Base Privacy Policy</h1>
-        <p class="meta">Last updated: October 1, 2026</p>
+        <p class="meta">Last updated: November 25, 2026</p>
         <p class="lede">
           This Privacy Policy describes how Konselit ("we", "us", or "our") handles information in
           connection with the VI Base mobile application for Android and iOS (package
@@ -29,7 +29,9 @@
           <li><a href="#overview">Overview</a></li>
           <li><a href="#information-we-process">Information we process</a></li>
           <li><a href="#first-party-analytics">First-party analytics</a></li>
+          <li><a href="#firebase-analytics">Firebase Analytics</a></li>
           <li><a href="#push-notifications">Push notifications</a></li>
+          <li><a href="#map-and-content">Map and remote content</a></li>
           <li><a href="#advertising">Advertising</a></li>
           <li><a href="#consent">Consent and advertising choices</a></li>
           <li><a href="#how-we-use">How we use information</a></li>
@@ -46,9 +48,11 @@
       <section id="overview">
         <h2>1. Overview</h2>
         <p>
-          VI Base is a content and utility app related to GTA VI information, including a curated
-          feed, reference database content, and optional notifications. To operate the app we use
-          first-party backend services and third-party advertising and messaging providers.
+          VI Base is a GTA VI companion app with a curated news feed, reference catalogue
+          (vehicles, weapons, characters, cheats), an interactive Leonida map, countdown tools,
+          local collections, and optional notifications. To operate the app we use first-party
+          backend services and third-party advertising, analytics, messaging, and content-delivery
+          providers.
         </p>
         <p>
           This policy is intended to explain our practices in plain language. It is not legal advice
@@ -66,14 +70,26 @@
           </li>
           <li>
             <strong>First-party usage analytics</strong> described below (installation UUID and
-            lightweight activity signals).
+            lightweight activity / product signals).
+          </li>
+          <li>
+            <strong>Firebase Analytics events</strong> when analytics collection is enabled under
+            applicable consent and preference rules.
           </li>
           <li>
             <strong>Push notification tokens</strong> when notifications are enabled.
           </li>
           <li>
-            <strong>Feed and content interactions</strong> that are necessary to load remote content
-            from our backend.
+            <strong>Feed and content interactions</strong> needed to load remote content from our
+            backend.
+          </li>
+          <li>
+            <strong>Map content requests</strong> when you open the map (map tiles and icons may be
+            loaded from third-party hosts).
+          </li>
+          <li>
+            <strong>Local on-device data</strong> such as saved collections, preferences, and cached
+            remote configuration (stored on your device; not used as an account).
           </li>
           <li>
             <strong>Advertising-related data</strong> processed by third-party ad providers according
@@ -89,18 +105,21 @@
       <section id="first-party-analytics">
         <h2>3. First-party analytics</h2>
         <p>
-          VI Base collects lightweight first-party install and usage analytics so we can understand
-          how many installations open the app and how often it is used. This is our own telemetry,
-          not Google Play Console analytics.
+          VI Base collects lightweight first-party install and product analytics so we can
+          understand installs, sessions, and which parts of the app are used. This is our own
+          telemetry (not Google Play Console analytics).
         </p>
         <p>We may collect:</p>
         <ul>
-          <li>a randomly generated installation UUID</li>
+          <li>a randomly generated installation / analytics UUID</li>
           <li>platform (Android or iOS)</li>
-          <li>app version and build version</li>
+          <li>app version and build / environment flags</li>
           <li>first-seen and last-seen timestamps</li>
-          <li>daily app activity records</li>
-          <li>session counts</li>
+          <li>session and daily activity signals</li>
+          <li>
+            coarse product events (for example screen views, content item views, favorites, shares,
+            and map open / marker select) without free-text personal content
+          </li>
         </ul>
         <p>
           The installation UUID is generated locally on the device. It is stored in normal app-local
@@ -112,20 +131,33 @@
           <li>Advertising ID</li>
           <li>IMEI</li>
           <li>phone number</li>
-          <li>precise location</li>
+          <li>precise location / GPS</li>
           <li>contacts</li>
           <li>email address</li>
           <li>hardware fingerprints</li>
           <li>other personally identifying device identifiers</li>
         </ul>
+      </section>
+
+      <section id="firebase-analytics">
+        <h2>4. Firebase Analytics</h2>
         <p>
-          Analytics processing is designed to be lightweight and is not intended to track every
-          screen view or every tap inside the app.
+          VI Base may use Google Firebase Analytics to measure app usage. Collection is subject to
+          your privacy / advertising consent status (including Google UMP where required) and
+          in-app analytics preference handling. Firebase may process identifiers and event data
+          under Google’s policies.
+        </p>
+        <p>
+          Learn more in the
+          <a href="https://policies.google.com/privacy" rel="noopener noreferrer" target="_blank"
+            >Google Privacy Policy</a
+          >
+          and Firebase documentation.
         </p>
       </section>
 
       <section id="push-notifications">
-        <h2>4. Push notifications</h2>
+        <h2>5. Push notifications</h2>
         <p>
           If you allow notifications, VI Base may store a push notification token (for example a
           Firebase Cloud Messaging or Expo push token) together with limited technical metadata such
@@ -138,17 +170,39 @@
         </p>
       </section>
 
+      <section id="map-and-content">
+        <h2>6. Map and remote content</h2>
+        <p>
+          When you use the Leonida map or browse remote feed / catalogue-related media, the app may
+          request images, tiles, icons, or JSON from our backends and from third-party content hosts
+          (for example map tile / icon CDNs). Those hosts may receive standard technical request
+          data such as IP address and user-agent as part of normal network delivery.
+        </p>
+        <p>
+          The map does <strong>not</strong> use your device GPS to place you on the map. Marker
+          interactions may be counted in first-party analytics as coarse events only.
+        </p>
+      </section>
+
       <section id="advertising">
-        <h2>5. Advertising</h2>
+        <h2>7. Advertising</h2>
         <p>
           VI Base displays advertisements to support the app. Advertising is delivered through
           third-party providers, which currently include:
         </p>
         <ul>
           <li>Google AdMob (including App Open ads and Google bidding through Unity LevelPlay)</li>
-          <li>Unity LevelPlay / ironSource (including interstitial ads, native ads, and mediation)</li>
+          <li>
+            Unity LevelPlay / ironSource (including interstitial ads, native feed ads, and mediation)
+          </li>
           <li>Meta Audience Network (integrated through LevelPlay)</li>
         </ul>
+        <p>
+          We may remotely configure whether specific ad formats are enabled or disabled (for example
+          app open, interstitial, or native). That configuration does not replace legal consent
+          requirements: where ads are enabled, Google User Messaging Platform (UMP) and related
+          privacy rules still apply.
+        </p>
         <p>
           These providers may process device, advertising, interaction, and diagnostic information
           according to their own policies and applicable consent choices. We do not control every
@@ -194,56 +248,66 @@
       </section>
 
       <section id="consent">
-        <h2>6. Consent and advertising choices</h2>
+        <h2>8. Consent and advertising choices</h2>
         <p>
           Where required by applicable law, VI Base may present a consent or privacy choices
-          interface for advertising. VI Base may use Google User Messaging Platform (UMP) or other
-          certified consent mechanisms where required.
+          interface for advertising. VI Base uses Google User Messaging Platform (UMP) where
+          required. On supported devices, Profile may show a “Privacy choices” control when UMP
+          indicates that privacy options are required.
         </p>
         <p>
           Your advertising choices may affect whether personalized or non-personalized ads are
-          shown. Availability of specific controls can vary by region, device, OS version, and
-          provider requirements.
+          shown, and whether ads can be requested at all. Availability of specific controls can vary
+          by region, device, OS version, and provider requirements. You can also manage related
+          settings in your device / Google account advertising preferences where available.
         </p>
       </section>
 
       <section id="how-we-use">
-        <h2>7. How we use information</h2>
+        <h2>9. How we use information</h2>
         <p>We use the information described in this policy to:</p>
         <ul>
           <li>operate and improve VI Base</li>
-          <li>deliver feed and backend content</li>
-          <li>measure observed installs and aggregate usage</li>
+          <li>deliver feed, map, and backend content</li>
+          <li>measure installs, sessions, and aggregate product usage</li>
           <li>send notifications you have enabled</li>
-          <li>show ads and support mediation</li>
+          <li>show ads, support mediation, and apply remote ad configuration</li>
           <li>diagnose technical issues and maintain security</li>
           <li>respond to privacy or support requests</li>
         </ul>
       </section>
 
       <section id="retention">
-        <h2>8. Retention</h2>
+        <h2>10. Retention</h2>
         <p>
           We retain first-party analytics and push token records for as long as reasonably needed to
           operate the service, measure usage, deliver notifications, and meet technical, security,
-          or legal requirements. Local installation identifiers may be removed when you uninstall the
-          app or clear app data.
+          or legal requirements. Local installation identifiers, collections, and caches may be
+          removed when you uninstall the app or clear app data.
         </p>
       </section>
 
       <section id="sharing">
-        <h2>9. Sharing and service providers</h2>
+        <h2>11. Sharing and service providers</h2>
         <p>We use service providers to help run VI Base, including:</p>
         <ul>
           <li>
-            <strong>Supabase</strong> for backend/feed infrastructure, push token storage, and
-            first-party analytics storage
+            <strong>Supabase</strong> for backend / feed infrastructure and related storage (such as
+            push token or install analytics records where configured)
           </li>
           <li>
-            <strong>Firebase Cloud Messaging</strong> and related push delivery infrastructure
+            <strong>First-party analytics infrastructure</strong> operated for Konselit product
+            telemetry
+          </li>
+          <li>
+            <strong>Firebase / Google</strong> for Cloud Messaging, Analytics (when enabled), and
+            advertising / consent tooling
           </li>
           <li>
             <strong>Advertising partners</strong> listed in the Advertising section
+          </li>
+          <li>
+            <strong>Map / media CDNs</strong> that deliver tiles, icons, or images you request in-app
           </li>
         </ul>
         <p>
@@ -253,7 +317,7 @@
       </section>
 
       <section id="security">
-        <h2>10. Security</h2>
+        <h2>12. Security</h2>
         <p>
           We take reasonable technical and organizational measures appropriate to the nature of the
           data we process. No method of transmission or storage is completely secure, and we cannot
@@ -262,7 +326,7 @@
       </section>
 
       <section id="children">
-        <h2>11. Children</h2>
+        <h2>13. Children</h2>
         <p>
           VI Base is not designed to knowingly collect personal information from children where
           prohibited by applicable law. If you believe a child has provided personal information to
@@ -271,7 +335,7 @@
       </section>
 
       <section id="rights">
-        <h2>12. Your rights and requests</h2>
+        <h2>14. Your rights and requests</h2>
         <p>
           Depending on where you live, you may have rights to request access to information we hold
           about you, request deletion, object to certain processing, or withdraw consent where
@@ -286,7 +350,7 @@
       </section>
 
       <section id="changes">
-        <h2>13. Changes to this policy</h2>
+        <h2>15. Changes to this policy</h2>
         <p>
           We may update this Privacy Policy from time to time. The “Last updated” date at the top of
           this page will change when we do. Continued use of VI Base after an update means the
@@ -296,7 +360,7 @@
       </section>
 
       <section id="contact">
-        <h2>14. Contact</h2>
+        <h2>16. Contact</h2>
         <p>
           <strong>Publisher:</strong> Konselit<br />
           <strong>App:</strong> VI Base<br />
